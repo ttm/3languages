@@ -31,7 +31,9 @@ pandoc paper.md \
 test -s paper.pdf
 if command -v pdfinfo >/dev/null; then pdfinfo paper.pdf | grep -E "^Pages:[[:space:]]+[1-9]"; fi
 if command -v pdftotext >/dev/null; then
-  pdftotext paper.pdf - | grep -Fq "From Three Languages to Epistemic"
-  pdftotext paper.pdf - | grep -Fq "References"
+  pdftotext paper.pdf paper.pdf.txt
+  grep -Fq "From Three Languages to Epistemic" paper.pdf.txt
+  grep -Fq "References" paper.pdf.txt
+  rm -f paper.pdf.txt
 fi
 echo "Built paper.pdf ($(wc -c < paper.pdf) bytes)"
