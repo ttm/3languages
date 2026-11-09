@@ -10,7 +10,7 @@ An open scholarly writing project developing an integrated perspective on **repr
 **Type:** Conceptual perspective / theory and hypothesis article  
 **Status:** Full working draft, **not peer reviewed or submitted**  
 **Draft date:** November 2026  
-**Length:** Approximately 5,400 words plus declarations and bibliography  
+**Length:** Approximately 5,400 words including declarations and bibliography  
 **References:** 27 traceable sources, with DOI or publisher links
 
 ## Origin and positioning
