@@ -4,7 +4,7 @@ An open scholarly writing project developing an integrated perspective on **repr
 
 ## Manuscript
 
-**[Read the working paper](paper.md)**
+**[Read the working paper (Markdown)](paper.md)** · **[Read the paper (PDF)](paper.pdf)**
 
 **Title:** *From Three Languages to Epistemic Loops: Representation, Sensory Coupling, and Autonomous Scientific Discovery*  
 **Type:** Conceptual perspective / theory and hypothesis article  
