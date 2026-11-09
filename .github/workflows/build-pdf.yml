@@ -1,0 +1,46 @@
+name: Build and commit paper PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - paper.md
+      - scripts/build_pdf.sh
+      - .github/workflows/build-pdf.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-pdf-main
+  cancel-in-progress: false
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - name: Install typesetting dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq \
+            pandoc texlive-xetex texlive-latex-recommended \
+            texlive-fonts-recommended fonts-dejavu-core poppler-utils
+      - name: Typeset and inspect paper
+        run: bash scripts/build_pdf.sh
+      - name: Commit PDF directly to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper.pdf
+          if git diff --cached --quiet; then
+            echo "PDF is already up to date."
+            exit 0
+          fi
+          git commit -m "Build paper.pdf from paper.md"
+          git push origin HEAD:main
