@@ -1,66 +1,41 @@
-# Three Languages, Sensory Coupling, and Machine-Generated Knowledge
+# Three Languages Hypothesis
 
-An open scholarly writing project developing an integrated perspective on **representation, perception, action, sensory stimulation, and scientific discovery by machines**.
+An academic working paper about the hypothesis that **natural language, mathematical formalism, and the arts** are three major forms of knowledge production and transmission.
 
-## Manuscript
+**[Read manuscript](paper.md)** | **[Read PDF](paper.pdf)**
 
-**[Read the working paper (Markdown)](paper.md)** · **[Read the paper (PDF)](paper.pdf)**
+**Title:** *The Three Languages Hypothesis: Natural Language, Mathematics, and Art as Epistemic Registers*  
+**Last updated:** 22 November 2026  
+**Status:** Working conceptual and hypothesis paper, not peer reviewed or submitted.  
+**Sources:** 20 references, available in [paper.md](paper.md) and [references.bib](references.bib).
 
-**Title:** *From Three Languages to Epistemic Loops: Representation, Sensory Coupling, and Autonomous Scientific Discovery*  
-**Type:** Conceptual perspective / theory and hypothesis article  
-**Status:** Full working draft, **not peer reviewed or submitted**  
-**Draft date:** November 2026  
-**Length:** Approximately 5,400 words including declarations and bibliography  
-**References:** 27 traceable sources, with DOI or publisher links
+## Argument
 
-## Origin and positioning
+The paper takes the 2026 three-languages proposition by [Oliveira Jr. and Oliveira](https://www.comciencia.br/porque-maquinas-inteligentes-poderao-superar-os-seres-humanos/) as its object of critical inquiry. Its central reconstruction distinguishes **discursive**, **formal-relational**, and **aesthetic-experiential** registers. These are neither mutually exclusive media nor three cognitive modules.
 
-The project responds to the proposal by Osvaldo N. Oliveira Jr. and Maria Cristina F. Oliveira in [*Por que máquinas inteligentes poderão superar os seres humanos?*](https://www.comciencia.br/porque-maquinas-inteligentes-poderao-superar-os-seres-humanos/) (*ComCiência*, 3 June 2026), and its antecedent scholarly treatment of machine-generated knowledge in [*Materials Discovery With Machine Learning and Knowledge Discovery*](https://doi.org/10.3389/fchem.2022.930369) (2022).
+It distinguishes **prominence**, **complementarity**, **completeness**, and **universal sufficiency**. Only the first two are advanced as bounded hypotheses. Strong sufficiency is not established.
 
-The initial idea: human knowledge is generated and transmitted through three broad "languages", natural language, mathematics, and the arts; growing machine competence could shift the production of knowledge toward autonomous systems.
+## What's new
 
-**Our contribution is not a fourth sensory language.** The three representational families are embedded in an epistemic cycle in which sensory signals, bodily and instrumental context, intervention, and external validation jointly constrain what can be known. Sensory stimulation is a central case of this cycle because it can be at once a structured expression, a perceptual event, and an experimental manipulation. The resulting framework is the **representational-sensorimotor-epistemic loop (RSEL)**.
+- The three-languages hypothesis is central; sensory stimulation is only a short side note.
+- Key antecedents: Cassirer, Goodman, Peirce, Bruner, Paivio, diagrammatic reasoning, and cognitive theories of grounding.
+- Serious counterarguments: heterogeneous categories, tacit skills, artistic knowledge debates, alternative taxonomies, and the gap between expression and action.
+- An explicit model of representation-dependent transformation and preservation.
+- Five testable propositions, including comparison against rival two-, three-, four-, and continuous-dimensional taxonomies.
+- Philosophical and technological consequences, including verifiable AI translation between representational registers.
 
-The argument is intentionally conditional. It does not claim that embodiment is required for every discovery, that auditory rhythms directly increase general intelligence, or that existing AI systems have achieved open-ended scientific autonomy.
+## Editorial requirements before publication
 
-## Key contributions of the draft
+- [ ] Independent scholarly review in philosophy of science, aesthetics, semiotics, and cognitive science.
+- [ ] Verify every source against its publisher record and full text, including 2026 works.
+- [ ] Confirm authorship, affiliations, contributions, disclosures, and financing.
+- [ ] Predefine coding rubrics and register-sensitive outcome measures for any proposed tests.
+- [ ] Select a venue and manuscript license.
 
-1. Separate the **taxonomy claim** (three useful representational families) from the **sufficiency claim** (those families alone enable every human activity).
-2. Connect symbol grounding, enaction, grounded cognition, predictive processing, multisensory integration, and active experimentation without treating them as equivalent theories.
-3. Integrate sensory stimulation into the paper's central epistemological mechanism, rather than as a later application.
-4. Formalize a minimal uncertain dynamical system and an idealized information-seeking intervention policy.
-5. Offer five potentially falsifiable propositions and a realistic preregistered experimental design.
-6. Distinguish physical stimulus fidelity, perceptual response, neural effect, task performance, and generalizable outcome.
-7. Specify requirements for interoperable protocol, execution, observation, and validation records.
-8. Identify limits in the original quantitative comparisons and in claims about fully automated science.
+The manuscript does not report new experimental evidence, demonstrate a latent three-factor structure, or claim all human skills reduce to three modes of expression.
 
-## Research and reference policy
+## Build
 
-- This is an **argumentative synthesis**, **not** a systematic review, randomized trial, meta-analysis, or demonstrated new empirical result.
-- The primary essay is directly attributed to its original authors. The present paper is an independent analytical response and does not represent their endorsement.
-- The bibliography is included in [paper.md](paper.md); canonical scholarly links and DOIs are provided.
-- The bibliography is broad but **not exhaustive**. A publication submission needs a targeted novelty search, checking of all source claims in full text, and literature updates to the submission date.
-- Publication authorship, affiliations, disclosures, contributor roles, and funding statements are **pending confirmation**. No affiliations or author contributions are asserted without consent.
+`paper.md` is the canonical source. GitHub Actions builds and commits `paper.pdf` using `scripts/build_pdf.sh` when the manuscript changes. `python scripts/validate_manuscript.py` checks structural citation consistency only, not scientific validity.
 
-## Editorial priorities before submission
-
-- [ ] Obtain a substantive critique from experts in philosophy of science, embodied cognition, and sensory neuroscience.
-- [ ] Determine a suitable academic outlet and apply its citation, figure, length, and disclosure requirements.
-- [ ] Recheck all references against publisher versions, including the 2026 literature.
-- [ ] Clarify what is genuinely new in RSEL compared with existing active-perception, cybernetic, and experimental-design frameworks.
-- [ ] Tighten falsification criteria and propose quantitative benchmarks for P1-P5.
-- [ ] Decide whether one schematic figure and a short comparative table would strengthen the manuscript.
-- [ ] Confirm authorship, contributions, competing interests, funding, and AI-assistance disclosure.
-- [ ] Have a human researcher approve the final text before journal submission.
-
-## Possible research extensions
-
-A separate empirical project could implement controlled experiments comparing open-loop and closed-loop sensory protocols, with prespecified hypotheses, suitable matched controls, careful physical calibration, preregistration, external validation, and appropriate ethics oversight. This **would be new work**, not evidence already supplied by the manuscript.
-
-## License and reuse
-
-No explicit license has been selected for this repository. As a result, do not assume permission to reuse or republish the manuscript beyond the rights supplied by applicable law and GitHub's terms. Choose a scholarly manuscript license with the submitting author(s) before broad redistribution.
-
-## Contribution workflow
-
-Direct edits to the default branch are supported for this initial research draft. When making future changes, preserve citations, separate evidence from hypotheses, and update declarations alongside scientific claims.
+No explicit license has been selected.
