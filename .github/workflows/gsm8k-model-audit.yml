@@ -1,0 +1,37 @@
+name: Audit archived model-generated GSM8K solutions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/analyze_cot_model_samples.py
+      - .github/workflows/gsm8k-model-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  model-samples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Audit pinned public model-generated traces
+        run: python scripts/analyze_cot_model_samples.py
+      - name: Commit report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add analysis/gsm8k_model_solution_audit.json analysis/gsm8k_model_solution_audit.md
+          if git diff --cached --quiet; then
+            echo "No new changes"
+            exit 0
+          fi
+          git commit -m "Publish model-generated GSM8K trace audit"
+          git push origin HEAD:main
