@@ -7,7 +7,7 @@
 
 ## Abstract
 
-The three languages hypothesis, articulated by Oliveira Jr. and Oliveira, proposes that human knowledge is fundamentally created and transmitted through natural languages, mathematical formalisms, and the arts. Its stronger version suggests that mastery of these languages could suffice for any human activity. We analyze this proposal against philosophy of symbolic forms, semiotics, cognitive theories of multiple representation, aesthetics, symbol grounding, diagrammatic reasoning, and automated science. This literature supports the importance of linguistic, formal, and artistic practices, but neither establishes that the three exhaust knowledge nor that expressive fluency entails practical competence. The categories are also heterogeneous: natural language and mathematics designate relatively constrained symbolic practices, while the arts include diverse, overlapping practices that need not share a syntax. We propose a reconstruction as three **epistemic registers**: discursive, formal-relational, and aesthetic-experiential. The registers are task-relative, partly overlapping orientations of representation, not mutually exclusive media, cognitive modules, or fundamental natural kinds. We distinguish descriptive prominence, complementarity, completeness, and sufficiency as logically separate hypotheses; specify criteria for translations between registers; and propose comparisons against two-register, alternative three-register, four-register, and multidimensional models. The resulting framework offers a philosophical vocabulary for plural kinds of understanding and a technological research programme for auditable AI transformations among prose, formal models, and expressive artifacts. Sensory stimulation is a peripheral illustration rather than a central premise.
+The three languages hypothesis, articulated by Oliveira Jr. and Oliveira, proposes that human knowledge is fundamentally created and transmitted through natural languages, mathematical formalisms, and the arts. Its stronger version suggests that mastery of these languages could suffice for any human activity. We analyze this proposal against philosophy of symbolic forms, semiotics, cognitive theories of multiple representation, aesthetics, symbol grounding, diagrammatic reasoning, and automated science. This literature supports the importance of linguistic, formal, and artistic practices, but neither establishes that the three exhaust knowledge nor that expressive fluency entails practical competence. The categories are also heterogeneous: natural language and mathematics designate relatively constrained symbolic practices, while the arts include diverse, overlapping practices that need not share a syntax. We propose a reconstruction as three **epistemic registers**: discursive, formal-relational, and aesthetic-experiential. The registers are task-relative, partly overlapping orientations of representation, not mutually exclusive media, cognitive modules, or fundamental natural kinds. We distinguish descriptive prominence, complementarity, completeness, and sufficiency as logically separate hypotheses; specify criteria for translations between registers; and propose comparisons against two-register, alternative three-register, four-register, and multidimensional models. An additional analysis examines chain-of-thought research and reports a descriptive audit of 8,792 public mathematical worked solutions. The resulting framework offers a philosophical vocabulary for plural kinds of understanding and a technological research programme for auditable AI transformations among prose, formal models, and expressive artifacts. Sensory stimulation is a peripheral illustration rather than a central premise.
 
 **Keywords:** three languages hypothesis; symbolic forms; epistemology; natural language; mathematics; arts; semiotics; cognitive science; artificial intelligence; multimodal representation
 
@@ -169,6 +169,74 @@ A concrete benchmark would contain matched task families emphasizing explanation
 
 A corpus for P4 should include oral traditions, craft, legal practice, scientific instrumentation, industrial design, and non-Western arts. If taxonomy judgments depend heavily on educational background, that dependence is a finding about the framework rather than an error to conceal.
 
+
+### 6.1. Chain-of-thought as a test of representational hypotheses
+
+A chain-of-thought (CoT) in contemporary language-model research is ordinarily an *external intermediate textual artifact*, produced before a final answer. It may act as a useful workspace or provide an explanation, but should not be mistaken for a faithful transcript of all internal computation. Three different questions must be separated: (i) does a trace contain identifiable representational forms; (ii) does introducing those forms change externally measured performance; and (iii) does the trace causally explain the model's actual decision? A positive answer to one question does not entail a positive answer to the other two.
+
+Wei and colleagues [21] demonstrated improvements from intermediate verbal reasoning exemplars on selected mathematical, symbolic, and commonsense tasks. This supports the *utility of discursive scaffolding* in their evaluated conditions, not a claim that all reasoning occurs verbally or that every generated step reflects internal causation.
+
+More directly relevant to the reconstructed hypothesis, Program-Aided Language Models (PAL) [22] and Program of Thoughts (PoT) [23] convert natural-language problems into executable code and delegate numerical computation to an interpreter. These are practical **discursive-to-formal transformations** with published performance advantages on their studied tasks. However, differences in model choice, tool access, computation, training and prompt structure must be controlled before inferring an independent causal effect of the formal register.
+
+Visual Sketchpad [26] extends this account with an intermediate visual representation: models can construct auxiliary sketches to support spatial or geometric reasoning. This is meaningful evidence for diagrammatic externalization, but **a diagram is not automatically art**. Its effects may be explained by Larkin and Simon's computational account of diagrams [8] without requiring an independent aesthetic register. ScienceQA [27] likewise supplies questions with visual and textual context and written explanatory annotations; modality diversity should not be confused with artistic cognition.
+
+CoT research also challenges representational exhaustiveness. Coconut [25] feeds continuous hidden states through the model as intermediate computational states rather than requiring intermediate linguistic tokens; its reported benefits on selected planning tasks imply that reasoning need not be wholly externalized in prose, mathematics, or art.
+
+### 6.2. Why published rationales cannot be equated with thought
+
+Turpin et al. [24] showed that generated CoT explanations can omit experimentally introduced biases that affect final predictions. Anthropic's interventions similarly found many instances of models using inserted hints without admitting their role in their verbal reasoning [31]. OpenAI's research on CoT monitoring further investigates how latent reasoning capability and training choices influence visible-trace monitorability [32]. A readable rationale may be informative yet unfaithful. Neither the eloquence nor the length of the rationale certifies its causal accuracy.
+
+For this project, the proper unit of analysis is an **auditable representational trace**: a sequence of external artifacts, transformations, checks, and references to evidence. Its provenance must be explicit. Such a trace can demonstrate that a system used an interpreter, that arithmetic is correct, or that a representation was shown to a human assessor. It cannot by itself expose every internal neural operation.
+
+### 6.3. An executed, reproducible audit of GSM8K
+
+We implemented and ran a deterministic audit of the full public GSM8K corpus [29], consisting of **7,473 training and 1,319 test examples**. The source files were verified against fixed SHA-256 hashes; no model inference was performed. Code and generated outputs are in scripts/analyze_cot_gsm8k.py and analysis/gsm8k_trace_audit.md, with machine-readable counts in analysis/gsm8k_trace_audit.json. These are **human-authored reference solutions**, not samples of private model CoT.
+
+| Descriptive result | Full corpus |
+| --- | ---: |
+| Worked solutions examined | 8,792 |
+| Solutions with both prose and explicit calculation markers | 8,678 (98.7%) |
+| Explicit calculation markers | 27,998 |
+| Markers accepted by a narrowly specified exact-arithmetic parser | 27,900 |
+| Mismatches among accepted markers | 0 |
+| Excluded markers, not scored as incorrect | 98 |
+
+The detection rule requires ordinary alphabetic words outside explicitly annotated calculation spans. It necessarily misses unmarked mathematical statements. The arithmetic checker accepts only simple numeric expressions using basic arithmetic, so its zero-mismatch observation must not be generalized to arbitrary mathematical validity. GSM8K was deliberately authored with calculation annotations, making discursive/formal co-occurrence partly a consequence of dataset construction. **This is a descriptive corpus result**, not evidence that a third artistic register is needed or that the two detected registers are statistically independent.
+
+The corpus is nevertheless a useful and reproducible demonstration of one kind of *D/F interface*: explanatory discourse and formal operations coexist within the same published solution. Causal complementarity would require a controlled ablation comparing alternative intermediate representations on novel tasks with a common model and matched total computation.
+
+### 6.4. Public data available for further falsification
+
+| Corpus or study | What it offers | What it does not establish |
+| --- | --- | --- |
+| **GSM8K** [29] | 8,792 human-authored multi-step numerical worked solutions | Internal AI reasoning, an artistic component, or the effect of adding prose |
+| **PRM800K** [30] | About 800,000 human step-correctness labels on generated mathematical solutions | Whether written steps faithfully caused a model's answer |
+| **ScienceQA** [27] | 21,208 multimodal science questions, with lectures and explanations for many instances | That images are artworks, or that external explanations faithfully describe internal computation |
+| **Visual Sketchpad** [26] | Published visual-reasoning experiments and code-supported sketching procedures | A distinct cognitive role of artistic experience |
+| **ArtEmis** [28] | About 455,000 human emotion attributions and explanations associated with roughly 80,000 artworks | A uniquely correct interpretation of each artwork or superiority of three registers |
+
+The **ArtEmis** dataset is essential to any serious attempt to test the artistic part of the conjecture. It explicitly links perceptual artworks, human emotional/interpretive responses, and verbal explanations. A preregistered analysis could estimate inter-annotator disagreement, the information lost in art-to-prose paraphrase, and the predictive value of aesthetic features after controlling for semantic content. We have **not** independently analyzed those original annotations in this paper; the numbers above are the published dataset description [28]. Unlike GSM8K, artistic interpretation cannot generally be scored against one numerical answer.
+
+### 6.5. Proposed causal experiment: reasoning across all three registers
+
+As a concrete application, consider designing an educational exhibition panel explaining exponential growth. The **discursive** register specifies claims, narrative, audience, and comprehension requirements. The **formal-relational** register specifies numerical sequences, transformations, constraints, and independent correctness checks. The **aesthetic-experiential** register specifies expressive composition, hierarchy, visual rhythm, and the likely experience of viewers. A graphic without artistic intent should be distinguished from aesthetic organization, so non-artistic diagrams must be included as controls.
+
+Use a $2\times2\times2$ design in which D, F, and A procedures are independently enabled or disabled. Hold task information, model, tool availability, inference budget, and assessor blinding as constant as feasible. Prespecify separate outcome variables for mathematical correctness, explanatory comprehension, and human-rated expressive or experiential quality. Measure incremental value and interactions, including **negative transfer**, rather than assuming all three always improve results.
+
+For example, the incremental value of A under fixed D and F can be measured as
+
+$
+\Delta_A(t)=\mathbb{E}[Y_t\mid D,F,A]-\mathbb{E}[Y_t\mid D,F,\neg A],
+$
+
+where $Y_t$ is a prespecified task-specific outcome and the matched comparison accounts for added information and resource expenditure. If the apparent A advantage vanishes when plain visual layout, novelty, and input richness are controlled, the claim of a distinct artistic contribution is weakened. Analogous contrasts test F and D. This is a **proposed experiment**; no effect sizes or experimental outcomes are asserted.
+
+A second experiment would perturb intermediate inputs or introduce controlled misleading cues and test whether the trace identifies its actual evidential dependencies. Independent code execution, proof checking, or documented visual transformations provide stronger verification of some stages than self-reported CoT alone.
+
+### 6.6. Epistemic implication
+
+CoT research motivates three **levels** that must not be conflated: internal computation, external intermediate representation, and public justification. The reconstructed three-languages hypothesis has plausible application at the second and third levels, as a framework for choosing, transforming, and evaluating representations. Present evidence most strongly supports the engineering value of **discursive/formal cooperation** and offers separate support for **visual-spatial externalization**. The additional contribution of an aesthetic-experiential register remains open, as does the claim that *three*, rather than two, four, or a continuous collection of representational affordances, is the right number.
+
 ## 7. Quantitative and conceptual cautions
 
 The proposed register coordinates are not empirically recovered latent variables. There is no demonstrated three-factor structure in human cognition. An instrument measuring the three registers may simply encode its designers' assumptions. Independent replication, counterexamples, and discriminant validity are essential.
@@ -232,3 +300,15 @@ The reconstructed hypothesis is best understood as a **comparative theory of rep
 18. Kirsh, David & Maglio, Paul (1994). *On distinguishing epistemic from pragmatic action*. Cognitive Science 18, 513-549. https://doi.org/10.1207/s15516709cog1804_1
 19. Lake, Brenden M. & Ullman, Tomer D. & Tenenbaum, Joshua B. & Gershman, Samuel J. (2017). *Building machines that learn and think like people*. Behavioral and Brain Sciences 40, e253. https://doi.org/10.1017/S0140525X16001837
 20. MacKay, David J. C. (1992). *Information-based objective functions for active data selection*. Neural Computation 4, 590-604. https://doi.org/10.1162/neco.1992.4.4.590
+21. Wei, Jason & others (2022). *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models*. Advances in Neural Information Processing Systems 35. https://proceedings.neurips.cc/paper/2022/hash/9d5609613524ecf4f15af0f7b31abca4-Abstract-Conference.html
+22. Gao, Luyu & Madaan, Aman & Zhou, Shuyan & Alon, Uri & Liu, Pengfei & Yang, Yiming & Callan, Jamie & Neubig, Graham (2023). *PAL: Program-aided Language Models*. International Conference on Machine Learning, PMLR 202. https://proceedings.mlr.press/v202/gao23f.html
+23. Chen, Wenhu & Ma, Xueguang & Wang, Xinyi & Cohen, William W. (2023). *Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks*. Transactions on Machine Learning Research. https://mlanthology.org/tmlr/2023/chen2023tmlr-program/
+24. Turpin, Miles & Michael, Julian & Perez, Ethan & Bowman, Samuel (2023). *Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting*. Advances in Neural Information Processing Systems 36. https://doi.org/10.52202/075280-3275
+25. Hao, Shibo & Sukhbaatar, Sainbayar & Su, DiJia & Li, Xian & Hu, Zhiting & Weston, Jason E & Tian, Yuandong (2025). *Training Large Language Models to Reason in a Continuous Latent Space*. ICLR 2025 Workshops. https://mlanthology.org/iclrw/2025/hao2025iclrw-training/
+26. Hu, Yushi & Shi, Weijia & Fu, Xingyu & Roth, Dan & Ostendorf, Mari & Zettlemoyer, Luke & Smith, Noah & Krishna, Ranjay (2024). *Visual Sketchpad: Sketching as a Visual Chain of Thought for Multimodal Language Models*. Advances in Neural Information Processing Systems 37. https://proceedings.neurips.cc/paper_files/paper/2024/hash/fb82011040977c7712409fbdb5456647-Abstract-Conference.html
+27. Lu, Pan & others (2022). *Learn to Explain: Multimodal Reasoning via Thought Chains for Science Question Answering*. Advances in Neural Information Processing Systems 35. https://scienceqa.github.io/
+28. Achlioptas, Panos & Ovsjanikov, Maks & Haydarov, Kilichbek & Elhoseiny, Mohamed & Guibas, Leonidas J. (2021). *ArtEmis: Affective Language for Visual Art*. IEEE/CVF Conference on Computer Vision and Pattern Recognition. https://artemisdataset.org/
+29. Cobbe, Karl & others (2021). *Training Verifiers to Solve Math Word Problems*. arXiv:2110.14168; GSM8K dataset. https://github.com/openai/grade-school-math
+30. Lightman, Hunter & others (2024). *Let's Verify Step by Step*. International Conference on Learning Representations. https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html
+31. Anthropic Alignment Science Team (2025). *Reasoning models don't always say what they think*. Anthropic Research. https://www.anthropic.com/research/reasoning-models-dont-say-think
+32. OpenAI (2026). *What affects chain-of-thought monitorability across the model lifecycle?*. OpenAI Alignment Research, November 10. https://openai.com/safety-alignment/cot-monitorability-model-lifecycle/
