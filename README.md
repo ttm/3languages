@@ -20,6 +20,7 @@ It distinguishes **prominence**, **complementarity**, **completeness**, and **un
 - The revised manuscript examines verbal CoT, executable reasoning, visual sketching, latent reasoning, and CoT faithfulness, as well as Fodor's Language of Thought and 2026 multimodal-CoT counterevidence.
 - Completed SHA-verified descriptive GSM8K audit: 8,792 human-authored solutions, 8,678 with both prose and explicitly marked arithmetic, and 27,900 simple arithmetic annotations independently checked.
 - [Reproducible audit report](analysis/gsm8k_trace_audit.md), [JSON data](analysis/gsm8k_trace_audit.json), and [Python script](scripts/analyze_cot_gsm8k.py).
+- Model-generated audit: [5,276 emitted solutions across four model variants](analysis/gsm8k_model_solution_audit.md), [machine-readable counts](analysis/gsm8k_model_solution_audit.json), and [reproduction script](scripts/analyze_cot_model_samples.py). Local arithmetic checks must not be confused with correct inference or internal CoT faithfulness.
 - Future research: process-labeled PRM800K, multimodal ScienceQA, and aesthetic interpretation in ArtEmis, with matched interventions to test D/F/A complementarity.
 - No model performance ablation, independent ArtEmis analysis, or cognitive three-factor finding is claimed.
 

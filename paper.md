@@ -207,6 +207,18 @@ The detection rule requires ordinary alphabetic words outside explicitly annotat
 
 The corpus is nevertheless a useful and reproducible demonstration of one kind of *D/F interface*: explanatory discourse and formal operations coexist within the same published solution. Causal complementarity would require a controlled ablation comparing alternative intermediate representations on novel tasks with a common model and matched total computation.
 
+
+**Model-generated trace audit.** We also analyzed GSM8K's archived model-generated `example_model_solutions.jsonl` file, covering 1,319 questions under four historical model/configuration variants, for **5,276 emitted solution traces** in total. The source's exact Git blob identity was verified before processing. Unlike the reference-solution audit above, these are model outputs, although still **public emitted text rather than internal computations**. The dataset's own answer-correctness labels, not independently recomputed correctness scores, are reported below.
+
+| Archived configuration | Labeled correct / 1,319 | Arithmetic spans accepted as correct | Accepted arithmetic mismatches | Incorrect answers with marked arithmetic fully accepted and correct |
+| --- | ---: | ---: | ---: | ---: |
+| 6B fine-tuning | 286 | 4,064 | 121 | 1,016 |
+| 6B verification | 515 | 3,998 | 26 | 785 |
+| 175B fine-tuning | 458 | 4,076 | 110 | 828 |
+| 175B verification | 742 | 4,208 | 26 | 555 |
+
+The full report and script are at `analysis/gsm8k_model_solution_audit.md` and `scripts/analyze_cot_model_samples.py`. These counts are **not randomized contrasts**: model sizes, selection procedures, and an older calculator implementation differ between conditions. In particular, many incorrect solutions have no detected simple arithmetic inconsistency, suggesting the importance of mistaken problem interpretation, incorrect choice of operations, omitted constraints, or other failures **without establishing which mechanism actually caused a particular error**. Conversely, a locally consistent arithmetic annotation is not a complete proof and is not evidence of faithful internal CoT. This comparison reinforces an epistemic point: independently checking formal *steps* and verifying the *overall inference* are different tasks. Neither the reference nor the generated GSM8K traces tests the aesthetic-experiential register.
+
 ### 6.4. Public data available for further falsification
 
 | Corpus or study | What it offers | What it does not establish |
