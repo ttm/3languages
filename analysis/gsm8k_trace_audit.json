@@ -1,0 +1,57 @@
+{
+  "caveat": "Regex annotation audit; not a model ablation, not a faithfulness test; artistic register unmeasured.",
+  "data_url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data",
+  "dataset": "GSM8K human-authored solutions (not model CoT)",
+  "method_version": "1.0",
+  "source_sha256": {
+    "test": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+    "train": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+  },
+  "splits": {
+    "test": {
+      "counts": {
+        "both": 1301,
+        "checked_correct": 4266,
+        "discursive_only_lines": 489,
+        "excluded": 16,
+        "has_math_marker": 1301,
+        "has_words": 1319,
+        "lines": 4819,
+        "marker_only_lines": 25,
+        "markers": 4282,
+        "mixed_lines": 4257,
+        "solutions": 1319
+      },
+      "mismatch_examples": []
+    },
+    "train": {
+      "counts": {
+        "both": 7377,
+        "checked_correct": 23634,
+        "discursive_only_lines": 2735,
+        "excluded": 82,
+        "has_math_marker": 7378,
+        "has_words": 7472,
+        "lines": 26720,
+        "marker_only_lines": 138,
+        "markers": 23716,
+        "mixed_lines": 23578,
+        "solutions": 7473
+      },
+      "mismatch_examples": []
+    }
+  },
+  "total": {
+    "both": 8678,
+    "checked_correct": 27900,
+    "discursive_only_lines": 3224,
+    "excluded": 98,
+    "has_math_marker": 8679,
+    "has_words": 8791,
+    "lines": 31539,
+    "marker_only_lines": 163,
+    "markers": 27998,
+    "mixed_lines": 27835,
+    "solutions": 8792
+  }
+}
