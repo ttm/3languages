@@ -1,0 +1,70 @@
+{
+  "caution": "Historical, selected outputs; author-provided correctness labels; no causal inference or model-internal CoT access.",
+  "dataset": "Archived GSM8K example_model_solutions.jsonl",
+  "examples": 1319,
+  "git_blob_sha1": "95472c66429c88ca96d09031d9624fece293081a",
+  "model_configurations": {
+    "175b_finetuning": {
+      "both_and_correct": 454,
+      "both_discursive_and_marked": 1301,
+      "checked_arith_correct": 4076,
+      "checked_arith_mismatch": 110,
+      "excluded_arith": 24,
+      "incorrect_with_all_markers_arith_checked_correct": 828,
+      "labeled_correct": 458,
+      "markers": 4210,
+      "samples": 1319,
+      "with_calculation_markers": 1301,
+      "with_discursive_words": 1319,
+      "without_both": 18,
+      "without_both_and_correct": 4
+    },
+    "175b_verification": {
+      "both_and_correct": 740,
+      "both_discursive_and_marked": 1301,
+      "checked_arith_correct": 4208,
+      "checked_arith_mismatch": 26,
+      "excluded_arith": 6,
+      "incorrect_with_all_markers_arith_checked_correct": 555,
+      "labeled_correct": 742,
+      "markers": 4240,
+      "samples": 1319,
+      "with_calculation_markers": 1301,
+      "with_discursive_words": 1318,
+      "without_both": 18,
+      "without_both_and_correct": 2
+    },
+    "6b_finetuning": {
+      "both_and_correct": 286,
+      "both_discursive_and_marked": 1312,
+      "checked_arith_correct": 4064,
+      "checked_arith_mismatch": 121,
+      "excluded_arith": 11,
+      "incorrect_with_all_markers_arith_checked_correct": 1016,
+      "labeled_correct": 286,
+      "markers": 4196,
+      "samples": 1319,
+      "with_calculation_markers": 1312,
+      "with_discursive_words": 1319,
+      "without_both": 7,
+      "without_both_and_correct": 0
+    },
+    "6b_verification": {
+      "both_and_correct": 514,
+      "both_discursive_and_marked": 1314,
+      "checked_arith_correct": 3998,
+      "checked_arith_mismatch": 26,
+      "excluded_arith": 23,
+      "incorrect_with_all_markers_arith_checked_correct": 785,
+      "labeled_correct": 515,
+      "markers": 4047,
+      "samples": 1319,
+      "with_calculation_markers": 1314,
+      "with_discursive_words": 1319,
+      "without_both": 5,
+      "without_both_and_correct": 1
+    }
+  },
+  "sha256": null,
+  "source": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/example_model_solutions.jsonl"
+}
