@@ -29,7 +29,7 @@ if refs != expected:
 
 # Capture both single citations [4] and groups such as [10,11] and [12-14].
 cited: set[int] = set()
-for match in re.finditer(r"\[([\d,\s-]+)\]", main):
+for match in re.finditer(r"\[([1-9]\d*(?:\s*[-,]\s*[1-9]\d*)*)\]", main):
     for token in match.group(1).split(","):
         token = token.strip()
         if not token:

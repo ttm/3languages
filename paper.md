@@ -216,8 +216,8 @@ The reconstructed hypothesis is best understood as a **comparative theory of rep
 2. Cassirer, Ernst (1944). *An Essay on Man: An Introduction to a Philosophy of Human Culture*. Yale University Press. https://plato.stanford.edu/entries/cassirer/
 3. Goodman, Nelson (1976). *Languages of Art: An Approach to a Theory of Symbols*. Hackett Publishing. https://hackettpublishing.com/full-catalog/languages-of-art
 4. Filieri, Luigi (2024). *Directions of objectivity: Cassirer on art as a symbolic language*. Continental Philosophy Review 57, 361-380. https://doi.org/10.1007/s11007-024-09651-5
-5. Atkin, Albert (2025). *Peirce's Theory of Signs*. Stanford Encyclopedia of Philosophy (living article). https://plato.stanford.edu/entries/peirce-semiotics/
-6. Bruner, Jerome S. (1966). *Toward a Theory of Instruction*. Harvard University Press. https://www.hup.harvard.edu/
+5. Atkin, Albert (2022). *Peirce's Theory of Signs*. Stanford Encyclopedia of Philosophy (living article). https://plato.stanford.edu/entries/peirce-semiotics/
+6. Bruner, Jerome S. (1966). *Toward a Theory of Instruction*. Harvard University Press. https://books.google.com/books/about/Toward_a_Theory_of_Instruction.html?id=moJbAAAAMAAJ
 7. Paivio, Allan (1990). *Mental Representations: A Dual Coding Approach*. Oxford University Press. https://doi.org/10.1093/acprof:oso/9780195066661.001.0001
 8. Larkin, Jill H. & Simon, Herbert A. (1987). *Why a diagram is (sometimes) worth ten thousand words*. Cognitive Science 11, 65-100. https://doi.org/10.1111/j.1551-6708.1987.tb00863.x
 9. Kitcher, Philip (1985). *The Nature of Mathematical Knowledge*. Oxford University Press. https://academic.oup.com/book/2951
