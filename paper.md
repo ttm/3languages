@@ -178,7 +178,9 @@ Wei and colleagues [21] demonstrated improvements from intermediate verbal reaso
 
 More directly relevant to the reconstructed hypothesis, Program-Aided Language Models (PAL) [22] and Program of Thoughts (PoT) [23] convert natural-language problems into executable code and delegate numerical computation to an interpreter. These are practical **discursive-to-formal transformations** with published performance advantages on their studied tasks. However, differences in model choice, tool access, computation, training and prompt structure must be controlled before inferring an independent causal effect of the formal register.
 
-Visual Sketchpad [26] extends this account with an intermediate visual representation: models can construct auxiliary sketches to support spatial or geometric reasoning. This is meaningful evidence for diagrammatic externalization, but **a diagram is not automatically art**. Its effects may be explained by Larkin and Simon's computational account of diagrams [8] without requiring an independent aesthetic register. ScienceQA [27] likewise supplies questions with visual and textual context and written explanatory annotations; modality diversity should not be confused with artistic cognition.
+Visual Sketchpad [26] extends this account with an intermediate visual representation: models can construct auxiliary sketches to support spatial or geometric reasoning. This is meaningful evidence for diagrammatic externalization, but **a diagram is not automatically art**. Its effects may be explained by Larkin and Simon's computational account of diagrams [8] without requiring an independent aesthetic register. ScienceQA [27] likewise supplies questions with visual and textual context and written explanatory annotations; modality diversity should not be confused with artistic cognition. A 2026 ACL study evaluated 14 non-reasoning and 8 reasoning models across 12 multimodal tasks, finding that CoT helped some mathematical and scientific reasoning but sometimes *hurt* visual grounding and object counting [34]. This is direct counterevidence to a universal instruction to verbalize more reasoning.
+
+Fodor's **Language of Thought Hypothesis** [33] posits structured internal representations (Mentalese), distinct from the natural language, equations or artworks through which agents may communicate. The compositionality and systematicity arguments for Mentalese thus address a different level from this paper's external epistemic registers. A visible CoT is not a direct observation of Mentalese.
 
 CoT research also challenges representational exhaustiveness. Coconut [25] feeds continuous hidden states through the model as intermediate computational states rather than requiring intermediate linguistic tokens; its reported benefits on selected planning tasks imply that reasoning need not be wholly externalized in prose, mathematics, or art.
 
@@ -225,9 +227,9 @@ Use a $2\times2\times2$ design in which D, F, and A procedures are independently
 
 For example, the incremental value of A under fixed D and F can be measured as
 
-$
+$$
 \Delta_A(t)=\mathbb{E}[Y_t\mid D,F,A]-\mathbb{E}[Y_t\mid D,F,\neg A],
-$
+$$
 
 where $Y_t$ is a prespecified task-specific outcome and the matched comparison accounts for added information and resource expenditure. If the apparent A advantage vanishes when plain visual layout, novelty, and input richness are controlled, the claim of a distinct artistic contribution is weakened. Analogous contrasts test F and D. This is a **proposed experiment**; no effect sizes or experimental outcomes are asserted.
 
@@ -312,3 +314,5 @@ The reconstructed hypothesis is best understood as a **comparative theory of rep
 30. Lightman, Hunter & others (2024). *Let's Verify Step by Step*. International Conference on Learning Representations. https://proceedings.iclr.cc/paper_files/paper/2024/hash/aca97732e30bcf1303bc22ac3924fd16-Abstract-Conference.html
 31. Anthropic Alignment Science Team (2025). *Reasoning models don't always say what they think*. Anthropic Research. https://www.anthropic.com/research/reasoning-models-dont-say-think
 32. OpenAI (2026). *What affects chain-of-thought monitorability across the model lifecycle?*. OpenAI Alignment Research, November 10. https://openai.com/safety-alignment/cot-monitorability-model-lifecycle/
+33. Rescorla, Michael (2023). *The Language of Thought Hypothesis*. Stanford Encyclopedia of Philosophy (online entry). https://plato.stanford.edu/entries/language-thought/
+34. Jin, Zhuoran & Zhu, Kejian & Yuan, Hongbang & Hao, Yupu & Cao, Pengfei & Chen, Yubo & Liu, Kang & Zhao, Jun (2026). *Look Light, Think Heavy: What Multimodal Chain-of-Thought Reasoning Can and Cannot Do*. Proceedings of ACL 2026, 8567-8608. https://doi.org/10.18653/v1/2026.acl-long.387

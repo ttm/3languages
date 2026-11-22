@@ -7,7 +7,7 @@ An academic working paper about the hypothesis that **natural language, mathemat
 **Title:** *The Three Languages Hypothesis: Natural Language, Mathematics, and Art as Epistemic Registers*  
 **Last updated:** 22 November 2026  
 **Status:** Working conceptual and hypothesis paper, not peer reviewed or submitted.  
-**Sources:** 32 references, available in [paper.md](paper.md) and [references.bib](references.bib).
+**Sources:** 34 references, available in [paper.md](paper.md) and [references.bib](references.bib).
 
 ## Argument
 
@@ -17,7 +17,7 @@ It distinguishes **prominence**, **complementarity**, **completeness**, and **un
 
 ## Chain-of-thought study and original data audit
 
-- The revised manuscript examines verbal CoT, executable reasoning, visual sketching, latent reasoning, and CoT faithfulness.
+- The revised manuscript examines verbal CoT, executable reasoning, visual sketching, latent reasoning, and CoT faithfulness, as well as Fodor's Language of Thought and 2026 multimodal-CoT counterevidence.
 - Completed SHA-verified descriptive GSM8K audit: 8,792 human-authored solutions, 8,678 with both prose and explicitly marked arithmetic, and 27,900 simple arithmetic annotations independently checked.
 - [Reproducible audit report](analysis/gsm8k_trace_audit.md), [JSON data](analysis/gsm8k_trace_audit.json), and [Python script](scripts/analyze_cot_gsm8k.py).
 - Future research: process-labeled PRM800K, multimodal ScienceQA, and aesthetic interpretation in ArtEmis, with matched interventions to test D/F/A complementarity.
